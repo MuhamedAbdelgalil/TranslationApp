@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link rel='stylesheet' href='./bower_components/bootstrap/dist/css/bootstrap.min.css'>
+    <link rel='stylesheet' href="./bower_components/flat-ui/dist/css/flat-ui.min.css">
+    <link rel='stylesheet' href='./bower_components/font-awesome/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='./css/style.css'>
+    <!--[if lt IE 9]>
+        <script src="./bower_components/flat-ui/dist/js/vendor/html5shiv.js"></script>
+        <script src="./bower_components/flat-ui/dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-cloak ng-controller="mainController">
+
+
+    <!--Start header -->
+    <div class="container-fluid text-center">
+        <nav class="navbar navbar-default navbar-fixed-top " role="navigation">
+            <div class="header">
+                <div class="navbar-header">
+                    <h2 class="text-primary">Yusuf Translation <span class="lead-text text-danger">Version 1</span></h2>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--End header -->
+
+    <!--start content section -->
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <span class="lead-text">English text :</span>
+                    <textarea class="form-control text-original" ng-model="textOriginal" placeholder="English text"></textarea>
+                </div>
+
+                <div class="col-md-2 col-sm-12 text-center">
+                    <button class="btn btn-primary btn-lg" ng-click="Translate()" ng-disabled="textOriginal.length==0">Translate </button>
+                </div>
+
+                <div class="col-md-5 col-sm-12">
+                    <span class="lead-text">Arabic text :</span>
+                    <textarea class="form-control text-translated" ng-model="textTranslated" placeholder="translated text"></textarea>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--End content section -->
+
+
+    <!--start Footer section -->
+    <footer class="text-center">
+        <div class="container-fluid">
+            <h5>All copy rights reserved for <span class="text-primary">Yusuf Translation</span> </h5>
+        </div>
+    </footer>
+    <!--End Footer section -->
+    <!--start loading icon section -->
+    <div class="loader-container" ng-show="loadingIconFlag">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+
+    <!--start loading icon section -->
+
+    <!-- scripts -->
+    <!--angular-->
+    <script src="./bower_components/angular/angular.js"></script>
+
+
+    <!--application-->
+    <script src="./js/app.js"></script>
+
+    <!-- controllers -->
+    <script src="./js/controllers/mainController.js"></script>
+
+</body>
+
+</html>
